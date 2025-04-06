@@ -12,7 +12,13 @@
 
     .w-full
       = f.label :description, class: "block text-gray-400 text-sm mb-2"
-      = f.text_area :description, rows: 3, class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3", placeholder: "Project description"
+      = f.text_area :description, rows: 3, class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3", placeholder: "Project descriptio)"
+
+    .w-full
+      = f.label :status, class: "block text-gray-400 text-sm mb-2"
+      = f.select :status, Project.statuses.values, { include_blank: "Select a status" }, { class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3" }
+      - if @project.errors.include?(:status)
+        .text-red-500.text-sm.mt-1 = @project.errors.full_messages_for(:status).first
 
     .flex.justify-between.items-center.pt-4
       = link_to "Cancel", projects_path, class: "text-gray-400 hover:text-gray-300"
