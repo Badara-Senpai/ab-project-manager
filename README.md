@@ -1,24 +1,100 @@
-# README
+# Project Conversation App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails application that allows users to manage projects, add comments, and track status changes. The application serves as a collaborative workspace for project management with a clean, modern UI.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- User authentication with Devise
+- Project creation and management
+- Comment system for discussions
+- Status tracking with change history
+- Unified timeline showing both comments and status changes
+- Clean, modern UI with dark theme
 
-* System dependencies
+## Technical Details
 
-* Configuration
+### Ruby Version
+- Ruby 3.1.x
+- Rails 7.0.x
 
-* Database creation
+### System Dependencies
+- PostgreSQL
+- Node.js (for Tailwind CSS)
 
-* Database initialization
+### Tech Stack
 
-* How to run the test suite
+- **Backend**:
+    - Ruby on Rails 7
+    - PostgreSQL database
 
-* Services (job queues, cache servers, search engines, etc.)
+- **Frontend**:
+    - Tailwind CSS for styling
+    - Hotwire (Turbo + Stimulus) for dynamic interactions
+    - Slim templating language
+    - ViewComponent for reusable UI components
 
-* Deployment instructions
+- **Authentication**:
+    - Devise
 
-* ...
+- **Testing**:
+    - RSpec for model and controller tests
+
+## Questions and Considerations
+
+During the development of this application, I would typically ask the following questions to better understand the requirements:
+
+### Questions I would ask:
+
+1. **What are the possible statuses a project can have?**
+    - Answer: Projects can be in one of these statuses: "Not Started", "In Progress", "Blocked", "Completed"
+
+2. **What information should be captured for each comment?**
+    - Answer: Each comment should have the comment text, the user who left it, and a timestamp
+
+3. **What information should be recorded when a status changes?**
+    - Answer: We should record the previous status, the new status, who made the change, and when it happened
+
+4. **How should the conversation history be displayed?**
+    - Answer: In reverse chronological order (newest first) with both comments and status changes in a unified timeline
+
+5. **Are there any validation requirements for comments or status changes?**
+    - Answer: Comments shouldn't be empty, and status changes should only be to valid statuses
+
+6. **Should users be able to filter or search through the conversation history?**
+    - Answer: For the initial version, a simple chronological display is sufficient, but filtering by type (comment/status) could be added later
+
+7. **How should user permissions be handled?**
+    - Answer: For now, all authenticated users can see all projects, but only project owners can modify them
+
+## Installation and Setup
+
+1. Clone the repository
+```bash
+    git clone https://github.com/your-username/project-conversation.git
+    cd project-conversation
+```
+
+2. Install dependencies
+```bash
+  bundle install
+```
+
+3. Set up the database
+```bash
+    rails db:create
+    rails db:migrate
+    rails db:seed
+```
+
+4. Start the Rails server
+```bash
+  bin/dev
+```
+
+5. Open your browser and navigate to `http://localhost:3000`
+
+## Demo Account
+You can use the following credentials to test the application:
+
+- **Email**: demo@example.com
+- **Password**: demo123
