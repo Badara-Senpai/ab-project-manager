@@ -1,0 +1,19 @@
+.mb-6
+  h1.text-white.text-3xl.font-bold Create New Project
+  p.text-gray-400.mt-2 Add a new project to track
+
+.bg-gray-800.rounded-lg.p-5.mb-6
+  = form_with(model: @project, class: "space-y-4") do |f|
+    .w-full
+      = f.label :name, class: "block text-gray-400 text-sm mb-2"
+      = f.text_field :name, class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3", placeholder: "Project name"
+      - if @project.errors.include?(:name)
+        .text-red-500.text-sm.mt-1 = @project.errors.full_messages_for(:name).first
+
+    .w-full
+      = f.label :description, class: "block text-gray-400 text-sm mb-2"
+      = f.text_area :description, rows: 3, class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3", placeholder: "Project description"
+
+    .flex.justify-between.items-center.pt-4
+      = link_to "Cancel", projects_path, class: "text-gray-400 hover:text-gray-300"
+      = f.submit "Create Project", class: "bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"

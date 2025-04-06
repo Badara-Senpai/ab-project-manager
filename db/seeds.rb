@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+project = Project.create!(
+  name: 'Demo Project',
+  description: 'This is a demo project for testing purposes',
+  status: 'Not Started'
+)
+
+project.comments.create!(content: 'Demo comment for the demo project')
+
+puts 'Seed data created successfully!'

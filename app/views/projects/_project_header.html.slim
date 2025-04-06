@@ -1,0 +1,5 @@
+= turbo_frame_tag "project-header" do
+  .flex.justify-between.items-center
+    h1.text-white.text-3xl.font-bold = @project.name
+
+  p.text-gray-400.mt-2 = project.description if project.description.present?

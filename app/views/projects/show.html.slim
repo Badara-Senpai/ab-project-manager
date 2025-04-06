@@ -1,0 +1,10 @@
+= render "project_header", project: @project
+
+.bg-gray-800.rounded-lg.p-5.mb-6.mt-3
+  h3.text-white.text-lg.mb-4 Add Comment
+
+  .mb-2.text-gray-400.text-sm Comment
+  = form_with(model: [@project, @comment], class: "space-y-4", data: { controller: "form" }) do |f|
+    .w-full
+      = f.text_area :content, rows: 3, class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3"
+    = f.submit "Add Comment", class: "bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"
