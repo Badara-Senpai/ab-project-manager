@@ -9,10 +9,10 @@
 #   end
 
 user = User.create!(
-  name: 'Test User',
-  email: 'test@example.com',
-  password: 'password123',
-  password_confirmation: 'password123'
+  name: 'Demo User 1',
+  email: 'demo@example.com',
+  password: 'demo123',
+  password_confirmation: 'demo123'
 )
 
 project = user.projects.create!(

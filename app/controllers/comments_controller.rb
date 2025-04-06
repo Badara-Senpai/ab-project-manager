@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @comment = @project.comments.build(comment_params)
+    @comment.user = current_user
 
     if @comment.save
       render turbo_stream: turbo_stream.replace(

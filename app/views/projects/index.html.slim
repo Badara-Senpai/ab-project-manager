@@ -1,5 +1,5 @@
 .mb-6
-  h1.text-white.text-3xl.font-bold Projects
+  h1.text-white.text-3xl.font-bold All Projects
 
 .flex.justify-between.items-center.mb-6
   .text-white
@@ -15,6 +15,12 @@
       .mb-3
         span.text-gray-400.block Description:
         span.text-white.block = project.description.present? ? project.description : "No description provided."
+
+      .flex.justify-between.items-center.mb-3
+        .flex.items-center
+          span.text-gray-400.mr-2 Owner:
+          span.text-blue-300 = project.user.name
+        span.text-gray-400.text-sm = "Last updated: #{project.updated_at.strftime('%b %d, %Y')}"
 
       .flex.justify-between.items-center
         span.text-gray-400.text-sm = "#{project.comments.count + project.status_changes.count} updates"

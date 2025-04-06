@@ -5,7 +5,7 @@ class StatusChangesController < ApplicationController
     new_status = params[:new_status]
 
     if previous_status != new_status
-      @project.status_changes.create(previous_status: previous_status, new_status: new_status)
+      @project.status_changes.create(previous_status: previous_status, new_status: new_status, user: current_user)
       @project.update(status: new_status)
 
       render turbo_stream: [
