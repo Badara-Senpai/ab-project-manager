@@ -1,5 +1,10 @@
 = turbo_frame_tag "project-header" do
   .flex.justify-between.items-center
     h1.text-white.text-3xl.font-bold = @project.name
+    = form_with(url: project_status_changes_path(project), method: :post, class: "inline-block", data: { controller: "project-status" }) do |f|
+      = f.select :new_status, options_for_select(Project.statuses.map { |k, v| [v, k] }, project.status), {},
+              { class: "bg-gray-700 border border-gray-600 rounded-full text-white py-1 px-3 text-sm font-medium",
+                      data: { action: "change->project-status#submitForm" } }
+      = f.submit "Update Status", class: "hidden"
 
   p.text-gray-400.mt-2 = project.description if project.description.present?
