@@ -137,6 +137,7 @@ GEM
       date
       net-protocol
     net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.2)
       timeout
     net-smtp (0.5.1)
@@ -279,7 +280,8 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   net-imap
-  net-pop
+  net-pop (~> 0.1.2)
+  net-protocol (>= 0.1.0)
   net-smtp
   pg (~> 1.1)
   puma (>= 5.0)
@@ -295,7 +297,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.3.3p89
+   ruby 3.3.6p108
 
 BUNDLED WITH
    2.5.14

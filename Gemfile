@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.3"
+ruby "3.3.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -49,9 +49,10 @@ gem 'view_component'
 
 gem 'devise'
 
+gem 'net-pop', '~> 0.1.2'
+gem 'net-protocol', '>= 0.1.0'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
-gem 'net-pop', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
