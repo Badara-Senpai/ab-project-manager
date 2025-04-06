@@ -1,6 +1,6 @@
 # Project Conversation App
 
-This is a Ruby on Rails application that allows users to manage projects, add comments, and track status changes. The application serves as a collaborative workspace for project management with a clean, modern UI.
+This is a Ruby on Rails application that allows users to manage projects, add comments, and track status changes. The application serves as a collaborative workspace for project management.
 
 ## Features
 
@@ -9,17 +9,16 @@ This is a Ruby on Rails application that allows users to manage projects, add co
 - Comment system for discussions
 - Status tracking with change history
 - Unified timeline showing both comments and status changes
-- Clean, modern UI with dark theme
 
 ## Technical Details
 
 ### Ruby Version
-- Ruby 3.1.x
-- Rails 7.0.x
+- Ruby 3.3.3
+- Rails 7.1.5
 
 ### System Dependencies
 - PostgreSQL
-- Node.js (for Tailwind CSS)
+- Tailwind CSS
 
 ### Tech Stack
 
@@ -64,13 +63,13 @@ During the development of this application, I would typically ask the following 
     - Answer: For the initial version, a simple chronological display is sufficient, but filtering by type (comment/status) could be added later
 
 7. **How should user permissions be handled?**
-    - Answer: For now, all authenticated users can see all projects, but only project owners can modify them
+    - Answer: For now, all authenticated users can see all projects, but only project owners should be able to modify them
 
 ## Installation and Setup
 
 1. Clone the repository
 ```bash
-    git clone https://github.com/your-username/project-conversation.git
+    git clone https://github.com/Badara-Senpai/ab-project-manager.git
     cd project-conversation
 ```
 
