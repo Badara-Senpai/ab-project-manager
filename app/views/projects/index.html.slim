@@ -7,13 +7,15 @@
 
 .space-y-4
   - @projects.each do |project|
-    .bg-gray-800.rounded-lg.p-4.text-gray-200
-      .mb-3
-        span.text-gray-400.block Name:
-        span.text-white.block = project.name
+    .bg-gray-800.rounded-lg.p-4.text-gray-200.hover:bg-gray-750.transition-colors
+      .flex.justify-between.items-center.mb-3
+        span.text-white.font-medium.text-lg = project.name
+        = render StatusBadgeComponent.new(status: project.status.titleize)
 
       .mb-3
         span.text-gray-400.block Description:
         span.text-white.block = project.description.present? ? project.description : "No description provided."
 
-      = link_to "Show this project", project_path(project), class: "inline-block bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded text-sm"
+      .flex.justify-between.items-center
+        span.text-gray-400.text-sm = "#{project.comments.count + project.status_changes.count} updates"
+        = link_to "Show this project", project_path(project), class: "inline-block bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded text-sm"
