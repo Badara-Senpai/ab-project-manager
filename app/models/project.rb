@@ -11,4 +11,8 @@ class Project < ApplicationRecord
     blocked: 'Blocked',
     completed: 'Completed'
   }
+
+  def timeline_items
+    (comments + status_changes).sort_by(&:created_at).reverse
+  end
 end

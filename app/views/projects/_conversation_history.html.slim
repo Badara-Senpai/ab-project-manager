@@ -1,0 +1,22 @@
+= turbo_frame_tag "conversation-history" do
+  - if project.timeline_items.any?
+    .space-y-4
+      - project.timeline_items.each do |item|
+        .bg-gray-800.rounded-lg.p-4
+          - if item.is_a?(Comment)
+            .flex.justify-between.items-center.mb-2
+              span.text-gray-300.font-medium Comment
+              span.text-gray-400.text-sm = item.created_at.strftime("%b %d, %Y at %H:%M")
+            p.text-white = item.content
+          - else
+            .flex.justify-between.items-center.mb-2
+              span.text-blue-300.font-medium Status Change
+              span.text-gray-400.text-sm = item.created_at.strftime("%b %d, %Y at %H:%M")
+            p.text-white
+              | Status changed from
+              span.text-gray-300.font-medium<> = item.previous_status.titleize
+              |  to
+              span.text-blue-300.font-medium<> = item.new_status.titleize
+  - else
+    .bg-gray-800.rounded-lg.p-4.text-center.text-gray-400
+      p No activity yet. Add a comment or change the status to get started.
