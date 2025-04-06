@@ -8,12 +8,22 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-project = Project.create!(
+user = User.create!(
+  name: 'Test User',
+  email: 'test@example.com',
+  password: 'password123',
+  password_confirmation: 'password123'
+)
+
+project = user.projects.create!(
   name: 'Demo Project',
   description: 'This is a demo project for testing purposes',
   status: 'Not Started'
 )
 
-project.comments.create!(content: 'Demo comment for the demo project')
+project.comments.create!(
+  content: 'Demo comment for the demo project',
+  user: user
+)
 
 puts 'Seed data created successfully!'
