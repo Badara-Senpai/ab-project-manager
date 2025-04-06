@@ -1,0 +1,30 @@
+/ app/views/devise/sessions/new.html.slim
+.flex.flex-col.items-center.justify-center.py-8
+  h2.text-white.text-3xl.font-bold.mb-6 Sign in
+
+  .bg-gray-800.rounded-lg.p-6.w-full.max-w-md
+    .bg-blue-900.text-white.p-4.rounded.mb-6
+      h3.font-medium.mb-1 Demo Account
+      p.text-sm
+        | Email:
+        span.font-mono.bg-gray-800.px-1.ml-2.rounded demo@example.com
+      p.text-sm
+        | Password:
+        span.font-mono.bg-gray-800.px-1.ml-2.rounded demo123
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f|
+      .w-full
+        = f.label :email, class: "block text-gray-400 text-sm mb-2"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3"
+
+      .w-full
+        = f.label :password, class: "block text-gray-400 text-sm mb-2"
+        = f.password_field :password, autocomplete: "current-password", class: "w-full bg-gray-700 border border-gray-600 rounded text-white py-2 px-3"
+
+      - if devise_mapping.rememberable?
+        .flex.items-center
+          = f.check_box :remember_me, class: "bg-gray-700 border border-gray-600 rounded mr-2"
+          = f.label :remember_me, class: "text-gray-400 text-sm"
+
+      .flex.justify-center.mt-6
+        = f.submit "Sign in", class: "bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded w-full"
