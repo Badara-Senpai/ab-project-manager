@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Project Manager
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  body.bg-gray-900.min-h-screen
+    = render "shared/navbar"
+    main.container.mx-auto.py-6.px-4
+      = yield
