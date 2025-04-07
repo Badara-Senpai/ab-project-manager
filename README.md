@@ -13,7 +13,7 @@ This is a Ruby on Rails application that allows users to manage projects, add co
 ## Technical Details
 
 ### Ruby Version
-- Ruby 3.3.3
+- Ruby 3.3.6
 - Rails 7.1.5
 
 ### System Dependencies
@@ -97,3 +97,9 @@ You can use the following credentials to test the application:
 
 - **Email**: demo@example.com
 - **Password**: demo123
+
+## CI/CD Considerations
+Due to time constraints, full CI/CD was not implemented. In a production scenario, I would:
+- Set up GitHub Actions for automated testing
+- Configure automatic deployment to Heroku on merge to main branch
+- Implement test coverage checks
