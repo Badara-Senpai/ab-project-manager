@@ -1,6 +1,8 @@
-# Project Conversation App
+# Project Manager
 
 This is a Ruby on Rails application that allows users to manage projects, add comments, and track status changes. The application serves as a collaborative workspace for project management.
+
+Demo Link: [Project manager Heroku](https://ab-project-manager-8942231a5df5.herokuapp.com/)
 
 ## Features
 
@@ -38,33 +40,7 @@ This is a Ruby on Rails application that allows users to manage projects, add co
 - **Testing**:
     - RSpec for model and controller tests
 
-## Questions and Considerations
-
-During the development of this application, I would typically ask the following questions to better understand the requirements:
-
-### Questions I would ask:
-
-1. **What are the possible statuses a project can have?**
-    - Answer: Projects can be in one of these statuses: "Not Started", "In Progress", "Blocked", "Completed"
-
-2. **What information should be captured for each comment?**
-    - Answer: Each comment should have the comment text, the user who left it, and a timestamp
-
-3. **What information should be recorded when a status changes?**
-    - Answer: We should record the previous status, the new status, who made the change, and when it happened
-
-4. **How should the conversation history be displayed?**
-    - Answer: In reverse chronological order (newest first) with both comments and status changes in a unified timeline
-
-5. **Are there any validation requirements for comments or status changes?**
-    - Answer: Comments shouldn't be empty, and status changes should only be to valid statuses
-
-6. **Should users be able to filter or search through the conversation history?**
-    - Answer: For the initial version, a simple chronological display is sufficient, but filtering by type (comment/status) could be added later
-
-7. **How should user permissions be handled?**
-    - Answer: For now, all authenticated users can see all projects, but only project owners should be able to modify them
-
+**********
 ## Installation and Setup
 
 1. Clone the repository
